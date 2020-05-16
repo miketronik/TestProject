@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="Tools\MessageHelper.cs" />
     <Compile Include="Tools\MyRelayCommand.cs" />
+    <Compile Include="Tools\MessageTabSelector.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\TabC.cs" />
     <Compile Include="ViewModel\TabB.cs" />

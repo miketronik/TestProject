@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GMM = GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,7 @@ namespace TestProject.ViewModel {
         }
         public void UpdateContent(MessageHelper message) {
             Content = $"{message.Message} Pressed";
+            GMM.Messenger.Default.Send(new MessageTabSelector { SelectedIndex = 1 });
         }
     }
 }

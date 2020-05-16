@@ -12,7 +12,7 @@ namespace TestProject.ViewModel {
 
         public MainViewModel() {
 
-            GalaSoft.MvvmLight.Messaging.Messenger.Default.Register<MessageHelper>(this, FocusTabItem);
+            GalaSoft.MvvmLight.Messaging.Messenger.Default.Register<MessageTabSelector>(this, FocusTabItem);
             
             TabViewModels = new ObservableCollection<ITabViewModel>();
             TabViewModels.Add(new TabA { Header = "Tab A" });
@@ -36,12 +36,14 @@ namespace TestProject.ViewModel {
             get => _selectedIndex;
             set => Set(ref _selectedIndex, value);
         }
-        private void FocusTabItem(MessageHelper mh) {
-            if (SelectedIndex == 0) {
-                SelectedIndex = 1;
-            } else {
-                SelectedIndex = 0;
-            }
+        private void FocusTabItem(MessageTabSelector tb) {
+            SelectedIndex = tb.SelectedIndex;
+
+            //if (SelectedIndex == 0) {
+            //    SelectedIndex = 1;
+            //} else {
+            //    SelectedIndex = 0;
+            //}
         }
     }
 

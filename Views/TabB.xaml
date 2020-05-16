@@ -12,7 +12,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="LightBlue">
+        <Grid Grid.Row="0" Background="Orange">
 
         </Grid>
         <Grid Grid.Row="1" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">

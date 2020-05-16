@@ -84,6 +84,7 @@
     <Compile Include="Tools\MessageHelper.cs" />
     <Compile Include="Tools\MyRelayCommand.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\TabC.cs" />
     <Compile Include="ViewModel\TabB.cs" />
     <Compile Include="ViewModel\TabA.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -97,11 +98,8 @@
     <Compile Include="Views\TabB.xaml.cs">
       <DependentUpon>TabB.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UserControl2.xaml.cs">
-      <DependentUpon>UserControl2.xaml</DependentUpon>
+    <Compile Include="Views\TabC.xaml.cs">
+      <DependentUpon>TabC.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -145,11 +143,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UserControl1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\UserControl2.xaml">
+    <Page Include="Views\TabC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -26,9 +26,9 @@ namespace TestProject.ViewModel {
                 return ServiceLocator.Current.GetInstance<TabA>();
             }
         }
-        public TabB TabB {
+        public TabC TabB {
             get {
-                return ServiceLocator.Current.GetInstance<TabB>();
+                return ServiceLocator.Current.GetInstance<TabC>();
             }
         }
         public static void Cleanup() {

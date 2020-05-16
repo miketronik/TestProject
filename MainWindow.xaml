@@ -16,7 +16,8 @@
         <Grid Grid.Row="0">
             <TabControl x:Name="MyTabControl"
                         ItemsSource="{Binding TabViewModels}"
-                        SelectedItem="{Binding SelectedTabViewModel}">
+                        SelectedItem="{Binding SelectedTabViewModel}"
+                        SelectedIndex="{Binding SelectedIndex}">
 
                 <TabControl.Resources>
                     <DataTemplate DataType="{x:Type models:TabA}">
@@ -24,6 +25,9 @@
                     </DataTemplate>
                     <DataTemplate DataType="{x:Type models:TabB}">
                         <views:TabB />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type models:TabC}">
+                        <views:TabC />
                     </DataTemplate>
                 </TabControl.Resources>
 

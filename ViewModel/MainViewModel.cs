@@ -6,38 +6,43 @@ using TestProject.Tools;
 namespace TestProject.ViewModel {
 
     public class MainViewModel : ViewModelBase {
+        private ObservableCollection<ITabViewModel> _tabViewModels;
+        private ITabViewModel _selectedTabViewModel;
+        private int _selectedIndex;
 
         public MainViewModel() {
 
-            GalaSoft.MvvmLight.Messaging.Messenger.Default.Register<MessageHelper>(this, UpdateContent);
+            GalaSoft.MvvmLight.Messaging.Messenger.Default.Register<MessageHelper>(this, FocusTabItem);
             
             TabViewModels = new ObservableCollection<ITabViewModel>();
             TabViewModels.Add(new TabA { Header = "Tab A" });
             TabViewModels.Add(new TabB { Header = "Tab B" });
+            TabViewModels.Add(new TabC { Header = "Tab C" });
             SelectedTabViewModel = TabViewModels[0];
         }
 
-        public ObservableCollection<ITabViewModel> TabViewModels { get; set; }
-       
-        private ITabViewModel _selectedTab;
+        public ObservableCollection<ITabViewModel> TabViewModels {
+            get => _tabViewModels;
+            set => Set(ref _tabViewModels, value);
+        }
+
         public ITabViewModel SelectedTabViewModel {
-            get => _selectedTab;
-            set {
-                _selectedTab = value;
-                OnPropertyChanged("SelectedTabViewModel");
-            }
+            get => _selectedTabViewModel;
+            set => Set(ref _selectedTabViewModel, value);
         }
         public event PropertyChangedEventHandler MyPropertyChanged;
-        public void OnPropertyChanged(string propertyName) {
-            MyPropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        public int SelectedIndex {
+            get => _selectedIndex;
+            set => Set(ref _selectedIndex, value);
         }
-
-        public void UpdateContent(MessageHelper message) {
-
-            SelectedTabViewModel = TabViewModels[1];
-
+        private void FocusTabItem(MessageHelper mh) {
+            if (SelectedIndex == 0) {
+                SelectedIndex = 1;
+            } else {
+                SelectedIndex = 0;
+            }
         }
-
     }
 
     public interface ITabViewModel {

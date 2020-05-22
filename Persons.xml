@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person>
+	<Id>1</Id>
+    <FirstName>Betty</FirstName>
+    <LastName>Geröllheimer</LastName>
+    <BirthDate>1942-03-16T00:00:00</BirthDate>
+    <City>Steintal</City>
+    <Details>verheiratet, 1 Kind</Details>
+  </Person>
+  <Person>
+  <Id>2</Id>
+    <FirstName>Barney</FirstName>
+    <LastName>Geröllheimer</LastName>
+    <BirthDate>1939-01-06T00:00:00</BirthDate>
+    <City>Steintal</City>
+    <Details>Rentner, verheiratet, 1 Kind</Details>
+  </Person>
+  <Person>
+  <Id>3</Id>
+    <FirstName>Homer</FirstName>
+    <LastName>Simpson</LastName>
+    <BirthDate>1956-05-12T00:00:00</BirthDate>
+    <City>Springfield</City>
+    <Details>verheiratet, 3 Kinder</Details>
+  </Person>
+  <Person>
+  <Id>4</Id>
+    <FirstName>Marge</FirstName>
+    <LastName>Simpson</LastName>
+    <BirthDate>1959-10-01T00:00:00</BirthDate>
+	<City>Springfield</City>
+    <Details>Hausfrau</Details>
+  </Person>
+  <Person>
+  <Id>5</Id>
+    <FirstName>Lisa</FirstName>
+    <LastName>Simpson</LastName>
+    <BirthDate>1984-08-02T00:00:00</BirthDate>
+    <City>Springfield</City>
+    <Details>Schüler</Details>
+  </Person>
+  <Person>
+  <Id>6</Id>
+    <FirstName>Bart</FirstName>
+    <LastName>Simpson</LastName>
+    <BirthDate>1982-04-01T00:00:00</BirthDate>
+    <City>Springfield</City>
+    <Details></Details>
+  </Person>
+  <Person>
+  <Id>7</Id>
+    <FirstName>Sheldon</FirstName>
+    <LastName>Cooper</LastName>
+    <BirthDate>1980-01-01T00:00:00</BirthDate>
+    <City>Pasadena</City>
+    <Details>theoretischer Physiker am California Institute of Technology</Details>
+  </Person>
+  <Person>
+  <Id>8</Id>
+    <FirstName>Leonard</FirstName>
+    <LastName>Hofstaedter</LastName>
+    <BirthDate>1980-05-10T00:00:00</BirthDate>
+    <City>Pasadena</City>
+    <Details>Ursprünglich aus New Jersey, besuchte Leonard die Princeton University und war 24 Jahre alt, als er promovierte</Details>
+  </Person>
+</ArrayOfPerson>

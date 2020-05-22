@@ -21,5 +21,7 @@ namespace TestProject.Views {
         public TabA() {
             InitializeComponent();
         }
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+        }
     }
 }

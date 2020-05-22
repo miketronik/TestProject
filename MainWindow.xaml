@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:TestProject.Views"
         xmlns:models="clr-namespace:TestProject.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="600">
+        Title="MainWindow" Height="550" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>

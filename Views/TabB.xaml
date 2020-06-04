@@ -17,16 +17,16 @@
             <Label Content="{Binding Content}" Width="Auto" FontSize="14"/>
         </Grid>
         <Grid Grid.Row="1">
-            <GroupBox Margin="300,10,0,0" Height="400" Width="480" DataContext="{Binding Person}" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <GroupBox Margin="300,10,0,0" Height="400" Width="480" DataContext="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Grid>
                     <Label Content="Vorname" Margin="10,10,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <TextBox Text="{Binding FirstName}" Margin="120,10,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+                    <TextBox Text="{Binding SelectedItem.FirstName}" Margin="120,10,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
                     <Label Content="Name" Margin="10,40,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <TextBox Text="{Binding LastName}" Margin="120,40,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+                    <TextBox Text="{Binding SelectedItem.LastName}" Margin="120,40,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
                     <Label Content="Ort" Margin="10,70,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <TextBox Text="{Binding City}" Margin="120,70,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+                    <TextBox Text="{Binding SelectedItem.City}" Margin="120,70,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
                     <Label Content="Bemerkungen" Margin="10,100,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <TextBox Text="{Binding Details}" Margin="120,100,0,0" Width="330" Height="250" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+                    <TextBox Text="{Binding SelectedItem.Details}" Margin="120,100,0,0" Width="330" Height="250" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
                 </Grid>
             </GroupBox>
             <GroupBox Grid.Row="1" Margin="10,10,0,0" Height="240" Width="280" HorizontalAlignment="Left" VerticalAlignment="Top">

@@ -33,11 +33,10 @@ namespace TestProject.ViewModel {
             set => Set(ref _selectedPersonItem, value);
         }
         private void Open() {
-            Person = new Person();
             var list = new LoadFile().LoadData();
             foreach (var item in list) {
                 if (item.Id == SelectedItem.Id) {
-                    Person = item._person;
+                    Person = item.GetPerson();
                 }
             }
         }
@@ -52,7 +51,7 @@ namespace TestProject.ViewModel {
                     MyList.Add(item);
                 }
             }
-            Person = MyList.FirstOrDefault()._person;
+            Person = MyList.FirstOrDefault().GetPerson();
 
             GMM.Messenger.Default.Send(new MessageTabSelector { SelectedIndex = 1 });
         }

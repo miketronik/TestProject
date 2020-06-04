@@ -1,39 +1,49 @@
 ﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestProject.Model;
 
 namespace TestProject.ViewModel {
     public class PersonItem : ViewModelBase {
+        private int _id;
+        private string _firstName;
+        private string _lastName;
+        private string _city;
 
         public PersonItem(Person p) {
-            _person.FirstName = p.FirstName;
-            _person.LastName = p.LastName;
-            _person.City = p.City;
+            FirstName = p.FirstName;
+            LastName = p.LastName;
+            City = p.City;
             _person = p;
         }
 
-        public Person _person { get; set; } = new Person();
+        private Person _person;
 
-        public int Id {
-            get => _person.Id;
-        }
-        public string FirstName {
-            get => _person.FirstName;
-        }
+        public Person GetPerson()
+        {
+            return _person;
+    }
 
-        public string LastName {
-            get => _person.LastName;
-        }
-
-        public string City {
-            get => _person.City;
+        public int Id
+        {
+            get => _id;
+            set => Set(ref _id, value);
         }
 
+        public string FirstName
+        {
+            get => _firstName;
+            set => Set(ref _firstName, value);
+        }
 
+        public string LastName
+        {
+            get => _lastName;
+            set => Set(ref _lastName, value);
+        }
 
+        public string City
+        {
+            get => _city;
+            set => Set(ref _city, value);
+        }
     }
 }

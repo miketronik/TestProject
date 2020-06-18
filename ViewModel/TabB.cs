@@ -10,54 +10,63 @@ using TestProject.Tools;
 using System.Collections.ObjectModel;
 using TestProject.Model;
 using GalaSoft.MvvmLight.Command;
+using System.Windows;
 
 namespace TestProject.ViewModel {
     public class TabB : ViewModelBase, ITabViewModel {
 
-        private PersonItem _selectedPersonItem;
+        //private PersonItem _selectedPersonItem;
+        public Person Person = new Person();
 
         public TabB() {
             Content = "noch nichts passiert";
             GalaSoft.MvvmLight.Messaging.Messenger.Default.Register<MessageHelper>(this, UpdateContent);
-            OpenCommand = new RelayCommand(Open);
+            SaveCommand = new RelayCommand(DoSave);
+            DeleteCommand = new RelayCommand(Delete);
         }
 
         public string Header { get; set; }
         public string Content { get; set; }
-        public Person Person { get; set; }
-        public RelayCommand OpenCommand { get; set; }
+        
+        public RelayCommand DeleteCommand { get; set; }
+        public RelayCommand SaveCommand { get; set; }
         public ObservableCollection<PersonItem> MyList { get; set; }
         
-        public PersonItem SelectedItem {
-            get => _selectedPersonItem;
-            set => Set(ref _selectedPersonItem, value);
+        private void DoSave() { 
+            MessageBox.Show("Speichern", FirstName + " " + LastName);
+            //new FileTools().SaveData(MyList);
+
         }
-        private void Open() {
-            var list = new LoadFile().LoadData();
-            foreach (var item in list) {
-                if (item.Id == SelectedItem.Id) {
-                    Person = item.GetPerson();
-                }
-            }
+        private void Delete() {
+            MessageBox.Show("Wirklich löschen?", "Achtung", MessageBoxButton.YesNo, MessageBoxImage.Warning);
         }
 
         public void UpdateContent(MessageHelper message) {
             Content = $"{"Edit "+message.Message}";
-            MyList = new ObservableCollection<PersonItem>();
-            ObservableCollection<PersonItem> list = message.PersonsList;
-            Person = new Person();
-            foreach (var item in list) {
-                if (item.LastName.Equals(message.Message)) {
-                    MyList.Add(item);
-                }
+            Person = new FileTools().GetPerson(message.Id);
+            if (Person == null) {
+                MessageBox.Show("Eintrag nicht gefunden");
+                return;
             }
-            Person = MyList.FirstOrDefault().GetPerson();
-
+            
             GMM.Messenger.Default.Send(new MessageTabSelector { SelectedIndex = 1 });
+            RaisePropertyChangedAll();
         }
 
 
         //########################################################################
+        public void RaisePropertyChangedAll() {
+            RaisePropertyChanged(() => FirstName);
+            RaisePropertyChanged(() => LastName);
+            RaisePropertyChanged(() => City);
+            RaisePropertyChanged(() => Details);
+
+
+        }
+
+        public bool IsAdmin {
+            get => true;
+        }
         public string FirstName {
             get => Person.FirstName;
             set {
@@ -79,6 +88,13 @@ namespace TestProject.ViewModel {
                 RaisePropertyChanged(() => City);
             }
         }
+        public DateTime? Birthdate {
+            get => Person.BirthDate;
+            set {
+                Person.BirthDate = value;
+                RaisePropertyChanged(() => Birthdate);
+            }
+        }
         public string Details {
             get => Person.Details;
             set {
@@ -86,6 +102,7 @@ namespace TestProject.ViewModel {
                 RaisePropertyChanged(() => Details);
             }
         }
+
 
     }
 }

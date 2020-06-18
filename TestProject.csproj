@@ -78,11 +78,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\DateTimeConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Person.cs" />
-    <Compile Include="Tools\LoadFile.cs" />
+    <Compile Include="Tools\FileTools.cs" />
     <Compile Include="Tools\MessageHelper.cs" />
     <Compile Include="Tools\MessageTabSelector.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

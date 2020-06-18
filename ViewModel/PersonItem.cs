@@ -12,7 +12,9 @@ namespace TestProject.ViewModel {
             FirstName = p.FirstName;
             LastName = p.LastName;
             City = p.City;
+            Id = p.Id;
             _person = p;
+
         }
 
         private Person _person;
@@ -20,7 +22,7 @@ namespace TestProject.ViewModel {
         public Person GetPerson()
         {
             return _person;
-    }
+        }
 
         public int Id
         {
@@ -45,5 +47,6 @@ namespace TestProject.ViewModel {
             get => _city;
             set => Set(ref _city, value);
         }
+       
     }
 }

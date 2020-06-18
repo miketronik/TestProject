@@ -10,7 +10,7 @@ namespace TestProject.ViewModel {
         public TabA() {
             Content = "List";
             OpenCommand = new RelayCommand(Open);
-            PersonsList = new LoadFile().LoadData();
+            PersonsList = new FileTools().LoadData();
         }
         public string Content { get; set; }
         public string Header { get; set; }
@@ -21,7 +21,8 @@ namespace TestProject.ViewModel {
             set => Set(ref _selectedPersonItem, value);
         }
         private void Open() {
-            GVM.Messenger.Default.Send(new MessageHelper { Message = _selectedPersonItem.LastName, PersonsList = PersonsList} );
+            GVM.Messenger.Default.Send(new MessageHelper { Id = SelectedItem.Id} );
+
         }
         
 

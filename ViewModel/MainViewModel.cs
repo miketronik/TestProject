@@ -30,7 +30,7 @@ namespace TestProject.ViewModel {
             get => _selectedTabViewModel;
             set => Set(ref _selectedTabViewModel, value);
         }
-        public event PropertyChangedEventHandler MyPropertyChanged;
+        //public event PropertyChangedEventHandler MyPropertyChanged;
 
         public int SelectedIndex {
             get => _selectedIndex;

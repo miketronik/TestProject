@@ -11,6 +11,7 @@ namespace TestProject.Tools {
     public class MessageHelper {
 
         public string Message { get; set; }
+        public int Id { get; set; }
         public ObservableCollection<PersonItem> PersonsList { get; set; }
     }
 }

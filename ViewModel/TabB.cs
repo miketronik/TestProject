@@ -11,9 +11,10 @@ using System.Collections.ObjectModel;
 using TestProject.Model;
 using GalaSoft.MvvmLight.Command;
 using System.Windows;
+using System.CodeDom;
 
 namespace TestProject.ViewModel {
-    public class TabB : ViewModelBase, ITabViewModel {
+    public class TabB : ViewModelBase, ITabViewModel, IDataErrorInfo {
 
         //private PersonItem _selectedPersonItem;
         public Person Person = new Person();
@@ -61,7 +62,6 @@ namespace TestProject.ViewModel {
             RaisePropertyChanged(() => City);
             RaisePropertyChanged(() => Details);
 
-
         }
 
         public bool IsAdmin {
@@ -100,6 +100,33 @@ namespace TestProject.ViewModel {
             set {
                 Person.Details = value;
                 RaisePropertyChanged(() => Details);
+            }
+        }
+
+
+        // implementierung IDataErrorInfo Interface
+
+        public string Error { get { return null; } }
+        public Dictionary<string, string> ErrorCollection { get; private set; } = new Dictionary<string, string>();
+        public string this[string name] {
+            get {
+                string result = null;
+
+                switch(name) {
+                    case "FirstName":
+                        if (string.IsNullOrWhiteSpace(FirstName))
+                            result = "Vorname darf nicht leer sein";
+                        else if (FirstName.Length < 3)
+                            result = "Vorname muss länger als 2 Zeichen sein";
+                        break;
+                }
+                if (ErrorCollection.ContainsKey(name))
+                    ErrorCollection[name] = result;
+                else if (result != null)
+                    ErrorCollection.Add(name, result);
+
+                RaisePropertyChanged(() => ErrorCollection);
+                return result;
             }
         }
 

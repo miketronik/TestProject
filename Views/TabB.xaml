@@ -27,7 +27,7 @@
             <GroupBox Margin="100,10,0,0" DataContext="{Binding}" Height="360" Width="480" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Grid>
                     <Label Content="Vorname" Margin="10,10,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <TextBox Text="{Binding FirstName}" Margin="120,10,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+                    <TextBox Text="{Binding FirstName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[FirstName]}" Margin="120,10,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
                     <Label Content="Name" Margin="10,40,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
                     <TextBox Text="{Binding LastName}" Margin="120,40,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
                     <Label Content="Ort" Margin="10,70,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />

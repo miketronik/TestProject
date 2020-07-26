@@ -12,6 +12,8 @@ namespace TestProject.ViewModel {
 
         public MainViewModel() {
 
+            //new UserTools().TestUserAccount();
+
             GalaSoft.MvvmLight.Messaging.Messenger.Default.Register<MessageTabSelector>(this, FocusTabItem);
             
             TabViewModels = new ObservableCollection<ITabViewModel>();

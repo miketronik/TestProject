@@ -13,7 +13,7 @@ namespace TestProject.ViewModel {
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<TabA>();
-            SimpleIoc.Default.Register<TabA>();
+            SimpleIoc.Default.Register<TabC>();
         }
 
         public MainViewModel Main {

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestProject.Views"
              mc:Ignorable="d" 
+             x:Name="list"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -16,6 +17,14 @@
         </Grid>
         <Grid Grid.Row="1" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="{Binding Content}" Height="100" Width="Auto" FontSize="14"/>
+            <Grid>
+                <GroupBox Margin="160,280,0,0" DataContext="{Binding}" Height="70" Width="480" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel Grid.Row="1" Width="320" Height="60" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Button Content="File Open" Command="{Binding DataContext.FileOpenCommand, ElementName=list}" Margin="10,10,10,10" Width="120" Height="30"/>
+                        <Button Content="löschen" Command="{Binding DataContext.DeleteCommand, ElementName=list}" Margin="10" Width="120" Height="30"/>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>

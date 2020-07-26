@@ -16,7 +16,6 @@ namespace TestProject.Tools {
             Log.Trace(IsLocalUser(CurrentUser));
             
 
-
         }
 
         public string CurrentUser => System.Security.Principal.WindowsIdentity.GetCurrent().Name;

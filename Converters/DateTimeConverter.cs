@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Windows.Data;
 namespace TestProject.Converters {
 
     public class DateTimeConverter : IValueConverter {
+        private static readonly ILogger Log = LogManager.GetCurrentClassLogger();
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
             if (value == null) {
                 return "";
@@ -18,7 +20,15 @@ namespace TestProject.Converters {
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-            throw new NotImplementedException();
+            try {
+                string format = "d.M.yyyy";
+                DateTime MyDateTime = DateTime.ParseExact(value.ToString(), format, culture);
+                return MyDateTime;
+            } catch (Exception e) {
+                Log.Error(e.StackTrace);
+                //throw e;
+            }
+            return null;
         }
     }
 

@@ -33,8 +33,8 @@ namespace TestProject.ViewModel {
         public RelayCommand SaveCommand { get; set; }
         public ObservableCollection<PersonItem> MyList { get; set; }
         
-        private void DoSave() { 
-            MessageBox.Show("Speichern", FirstName + " " + LastName);
+        private void DoSave() {
+            MessageBox.Show("Birthdate: " + Birthdate, FirstName + " " + LastName,MessageBoxButton.OK ,MessageBoxImage.Information) ;
             //new FileTools().SaveData(MyList);
 
         }

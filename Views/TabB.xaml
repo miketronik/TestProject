@@ -33,9 +33,10 @@
                     <Label Content="Ort" Margin="10,70,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
                     <TextBox Text="{Binding City}" Margin="120,70,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
                     <Label Content="Geburtsdatum" Margin="10,100,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <TextBox Text="{Binding Birthdate, Converter={StaticResource DateConverter}}" Margin="120,100,0,0" Width="330" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
-                    <Label Content="Bemerkungen" Margin="10,130,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    <TextBox Text="{Binding Details}" Margin="120,130,0,0" Width="330" Height="210" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+                    <DatePicker Text="{Binding Birthdate, Converter={StaticResource DateConverter}, Mode=TwoWay, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True}" Margin="120,100,0,0" Width="330" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+                    <DatePicker SelectedDate="{Binding Birthdate, Converter={StaticResource DateConverter}, Mode=TwoWay}" Margin="120,130,0,0" Width="330" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+                    <Label Content="Bemerkungen" Margin="10,160,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <TextBox Text="{Binding Details}" Margin="120,160,0,0" Width="330" Height="180" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"  />
                 </Grid>
             </GroupBox>
             <GroupBox Margin="160,380,0,0" DataContext="{Binding}" Height="70" Width="480" HorizontalAlignment="Left" VerticalAlignment="Top">

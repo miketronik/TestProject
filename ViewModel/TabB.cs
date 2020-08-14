@@ -24,6 +24,8 @@ namespace TestProject.ViewModel {
             GalaSoft.MvvmLight.Messaging.Messenger.Default.Register<MessageHelper>(this, UpdateContent);
             SaveCommand = new RelayCommand(DoSave);
             DeleteCommand = new RelayCommand(Delete);
+
+            Birthdate = new DateTime(1985,12,30);
         }
 
         public string Header { get; set; }

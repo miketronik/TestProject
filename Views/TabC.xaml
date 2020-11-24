@@ -25,7 +25,7 @@
             <Grid>
                 <Label Content="Version wählen:" Margin="10,10,0,0" HorizontalAlignment="Left"/>
                 <ComboBox ItemsSource="{Binding HSBVersion}" SelectedItem="{Binding HsbVersionSelectedItem}" SelectedIndex="{Binding SelectedIndex}" Margin="110,10,0,0" Width="150" Height="25"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Grid Visibility="{Binding IsShowHsbOptions}">
+                <Grid Visibility="{Binding IsShowHsbOptions, Converter={StaticResource BoolToVisibility}}">
                     <Label Content="Eingabe:" Margin="10,50,0,0" HorizontalAlignment="Left"/>
                     <TextBox Text="{Binding IPAddress}" Margin="110,50,0,0" Width="150" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 </Grid>

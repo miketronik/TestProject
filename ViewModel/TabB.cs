@@ -25,7 +25,7 @@ namespace TestProject.ViewModel {
             SaveCommand = new RelayCommand(DoSave);
             DeleteCommand = new RelayCommand(Delete);
 
-            Birthdate = new DateTime(1985,12,30);
+            //Birthdate = new DateTime(1985,12,30);
         }
 
         public string Header { get; set; }
